@@ -7,6 +7,7 @@ class DogsController < ApplicationController
 
   def create
     dog = Dog.create(dog_params)
+    puts dog.errors.messages
       if dog.valid?
         render json: dog
       else
